@@ -1,61 +1,68 @@
-from django.db import models
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>አል-አሚን ወኪል ኤጀንሲ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+<body>
 
-class EmployeeApplication(models.Model):
-    GENDER_CHOICES = [
-        ('ወንድ', 'ወንድ'),
-        ('ሴት', 'ሴት'),
-    ]
+    <header>
+        <h1>አል-አሚን የሠራተኛና አሠሪ አገናኝ ኤጀንሲ</h1>
+    </header>
 
-    REGION_CHOICES = [
-        ('አዲስ አበባ', 'አዲስ አበባ'),
-        ('ድሬዳዋ', 'ድሬዳዋ'),
-        ('ኦሮሚያ', 'ኦሮሚያ'),
-        ('አማራ', 'አማራ'),
-        ('ሲዳማ', 'ሲዳማ'),
-        ('ደቡብ ኢትዮጵያ', 'ደቡብ ኢትዮጵያ'),
-        ('ማዕከላዊ ኢትዮጵያ', 'ማዕከላዊ ኢትዮጵያ'),
-        ('ደቡብ ምዕራብ ኢትዮጵያ', 'ደቡብ ምዕራብ ኢትዮጵያ'),
-        ('ትግራይ', 'ትግራይ'),
-        ('ሶማሌ', 'ሶማሌ'),
-        ('አፋር', 'አፋር'),
-        ('ቤንሻንጉል ጉሙዝ', 'ቤንሻንጉል ጉሙዝ'),
-        ('ጋምቤላ', 'ጋምቤላ'),
-        ('ሀረሪ', 'ሀረሪ'),
-    ]
+    <div class="container">
+        <h2>እንኳን ወደ ድረ-ገጻችን በሰላም መጡ!</h2>
+        <p>ኤጀንሲያችን ታማኝ እና ብቁ የሆኑ ሠራተኞችን ከታማኝ አሠሪዎች ጋር በልዩ ጥራት ያገናኛል። አሁን መመዝገብ ከፈለጉ ከታች ያለውን ቁልፍ ተጭነው ማመልከቻ ቅጹን ይሙሉ::</p>
+        
+        <a href="{% url 'apply_now' %}" class="btn">አሁኑኑ ያመልክቱ (Apply Now)</a>
+    </div>
 
-    EDUCATION_CHOICES = [
-        ('ያልተማረ/መጻፍ ማነብ', 'ያልተማረ/መጻፍ ማነብ'),
-        ('1ኛ-8ኛ ክፍል', '1ኛ-8ኛ ክፍል'),
-        ('9ኛ-12ኛ ክፍል', '9ኛ-12ኛ ክፍል'),
-        ('ሰርተፍኬት (Certificate)', 'ሰርተፍኬት (Certificate)'),
-        ('ዲፕሎማ (Diploma)', 'ዲፕሎማ (Diploma)'),
-        ('የመጀመሪያ ዲግሪ (BSc/BA)', 'የመጀመሪያ ዲግሪ (BSc/BA)'),
-        ('ማስተርስ እና ከዚያ በላይ', 'ማስተርስ እና ከዚያ በላይ'),
-    ]
-
-    COUNTRY_CHOICES = [
-        ('ሳውዲ አረቢያ', 'ሳውዲ አረቢያ'),
-        ('ዱባይ (UAE)', 'ዱባይ (UAE)'),
-        ('ኩዌት', 'ኩዌት'),
-        ('ኳታር', 'ኳታር'),
-        ('ዮርዳኖስ', 'ዮርዳኖስ'),
-    ]
-
-    JOB_CHOICES = [
-        ('የቤት ሰራተኛ', 'የቤት ሰራተኛ'),
-        ('ሹፌር', 'ሹፌር'),
-        ('የህንጻ ጥበቃ', 'የህንጻ ጥበቃ'),
-        ('የሆቴል ሰራተኛ', 'የሆቴል ሰራተኛ'),
-    ]
-
-    full_name = models.CharField("ሙሉ ስም", max_length=100)
-    gender = models.CharField("ጾታ", max_length=10, choices=GENDER_CHOICES)
-    age = models.IntegerField("ዕድሜ")
-    phone_number = models.CharField("የስልክ ቁጥር", max_length=20)
-    region = models.CharField("ያሉበት ክልል", max_length=50, choices=REGION_CHOICES)
-    education_level = models.CharField("የትምህርት ደረጃ", max_length=50, choices=EDUCATION_CHOICES)
-    destination_country = models.CharField("መሄድ የሚፈልጉት ሀገር", max_length=50, choices=COUNTRY_CHOICES)
-    job_type = models.CharField("የሚፈልጉት የሥራ ዓይነት", max_length=50, choices=JOB_CHOICES)
-
-    def str(self):
-        return self.full_name
+</body>
+</html>
