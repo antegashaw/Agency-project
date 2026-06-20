@@ -122,6 +122,15 @@
         .btn-submit:hover {
             background-color: #d35400;
         }
+/* ከሌሎቹ ዲዛይኖች በታች፣ ከ </style> በፊት ይህንን ጨምረው */
+    .profile-photo {
+        width: 150px;       
+        height: 200px;      
+        object-fit: cover;  
+        border-radius: 8px; 
+    }
+<img src="{{ worker.image.url }}" class="profile-photo" alt="የሰራተኛ ፎቶ">
+</style>
     </style>
 </head>
 <body>
