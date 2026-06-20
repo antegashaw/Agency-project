@@ -127,17 +127,12 @@
 <body>
 
     <div class="form-container">
-        <form method="POST">
-            {% csrf_token %}
-            
-            <table class="header-table">
-                <tr>
-                    <td class="header-title">APPLICATION FOR EMPLOYMENT</td>
-                </tr>
-                <tr>
-                    <td class="agency-name">AL MEWJUDE AGENCY / ዓለሙ ጁድ ኤጀንሲ</td>
-                </tr>
-            </table>
+        <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="form-group">
+    <label style="font-weight: bold;">የአመልካች ፎቶ (Photo):</label>
+    <input type="file" name="image" accept="image/*" required>
+</div>
 <div class="form-grid">
                 <div class="form-group">
                     <label>POST REQUIRED <span class="arabic">وظيفة مطلوبة</span></label>
