@@ -2,10 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "manage.py",
+      "src": "wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "distDir": "."
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
       }
     }
   ],
@@ -16,7 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "wsgi.py"
     }
   ]
 }
