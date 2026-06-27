@@ -1,6 +1,19 @@
 <!DOCTYPE html>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <label>ሙሉ የቁም ፎቶ:</label>
+    <input type="file" name="full_photo" required>
+        <label>ጉርድ ፎቶ:</label>
+    <input type="file" name="half_photo" required>
+        <button type="submit">ላክ</button>
+</form>
 <html lang="am">
+<label>ሙሉ የቁም ፎቶ (Full Photo):</label>
+<input type="file" name="full_photo" required>
+<label>ጉርድ ፎቶ (Half Photo):</label>
+<input type="file" name="half_photo" required>
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ህጋዊ የውጭ ሀገር የስራ ስምሪት ኤጀንሲ</title>
@@ -67,6 +80,14 @@
         }
     </style>
 </head>
+<footer style="background-color: #f4f4f4; padding: 20px; text-align: center; margin-top: 50px;">
+    <div class="contact-info">
+        <h3>ያግኙን</h3>
+        <p>ስልክ ቁጥር: +251 9XX XXX XXX</p>
+        <p>ኢሜይል: info@agencyname.com</p>
+        <p>አድራሻ: አዲስ አበባ፣ ኢትዮጵያ</p>
+    </div>
+</footer>
 <body>
 
     <header>
