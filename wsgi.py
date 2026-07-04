@@ -1,9 +1,10 @@
 import os
 import sys
 
-# የፕሮጀክቱ ፋይል ያለበትን ቦታ ለDjango እንንገረው
-sys.path.insert(0, os.path.abspath(os.path.dirname(file)))
+# የፕሮጀክትህ Root ፎልደር ወደ Path እንዲገባ እናድርግ
+sys.path.insert(0, os.path.dirname(os.path.abspath(file)))
 
+# የ settings ፋይል ያለበትን መንገድ በግልጽ እንንገረው
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 from django.core.wsgi import get_wsgi_application
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 application = get_wsgi_application()
