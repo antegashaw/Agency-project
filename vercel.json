@@ -1,9 +1,5 @@
+
 {
-  "build": {
-    "env": {
-      "PYTHONPATH": "."
-    }
-  },
   "builds": [
     {
       "src": "wsgi.py",
