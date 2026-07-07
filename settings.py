@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-))gj_qjk=tbyuxwd94ia!q0z9=nhfw88zv^&n826ixarb!*lu#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['agency-project-g331.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+
 CSRF_TRUSTED_ORIGINS = ['https://al-amin-ale-amine.onrender.com']
 
 
@@ -53,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'agency_project.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
