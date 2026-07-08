@@ -1,9 +1,15 @@
 from django.db import models
 
 class EmployeeApplication(models.Model):
+class Applicant(models.Model):
+    # ... ሌሎች መስኮችህ ...
+    passport_photo = models.ImageField(upload_to='passport_photos/', blank=True, null=True)    
+class Applicant(models.Model):
+    # ሌሎች የፎርም መረጃዎች እዚህ አሉ...
+    full_photo = models.ImageField(upload_to='photos/', verbose_name="ሙሉ የቁም ፎቶ")
+    half_photo = models.ImageField(upload_to='photos/', verbose_name="ጉርድ ፎቶ")
     GENDER_CHOICES = [('ወንድ', 'ወንድ'), ('ሴት', 'ሴት')]
-    
-    REGION_CHOICES = [
+        REGION_CHOICES = [
         ('አዲስ አበባ', 'አዲስ አበባ'), ('ድሬዳዋ', 'ድሬዳዋ'), ('ኦሮሚያ', 'ኦሮሚያ'),
         ('አማራ', 'አማራ'), ('ሲዳማ', 'ሲዳማ'), ('ደቡብ ኢትዮጵያ', 'ደቡብ ኢትዮጵያ'),
         ('ማዕከላዊ ኢትዮጵያ', 'ማዕከላዊ ኢትዮጵያ'), ('ደቡብ ምዕራብ ኢትዮጵያ', 'ደቡብ ምዕራብ ኢትዮጵያ'),

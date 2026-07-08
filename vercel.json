@@ -7,12 +7,12 @@
   ],
   "routes": [
     {
-      "src": "/static(.*)",
-      "dest": "static/$1"
+      "src": "/static/(.*)",
+      "dest": "/registration/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "wsgi.py" 
+      "dest": "wsgi.py"
     }
   ]
 }
