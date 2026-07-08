@@ -1,9 +1,18 @@
 from django.db import models
 
-class EmployeeApplication(models.Model):
 class Applicant(models.Model):
-    # ... ሌሎች መስኮችህ ...
-    passport_photo = models.ImageField(upload_to='passport_photos/', blank=True, null=True)    
+    pass
+    # ከዚህ በታች ያሉት መስኮች በሙሉ 4 ስፔስ ወደ ውስጥ መግባት አለባቸው (Indented)
+    full_name = models.CharField(max_length=100)
+    passport_no = models.CharField(max_length=50)
+    # ያንተን የፎቶ መስክ እዚህ ጨምር
+    passport_photo = models.ImageField(upload_to='passport_photos/', blank=True, null=True)
+    
+    def str(self):
+        return self.full_name
+
+class EmployeeApplication(models.Model):
+   
 class Applicant(models.Model):
     # ሌሎች የፎርም መረጃዎች እዚህ አሉ...
     full_photo = models.ImageField(upload_to='photos/', verbose_name="ሙሉ የቁም ፎቶ")
