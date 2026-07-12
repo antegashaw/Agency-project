@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Al Mewjud Agency</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="background: #f4f4f4; padding: 20px; text-align: center;">
+        <img src="{% static 'logo.png' %}" alt="Al Mewjud Logo" style="width: 100px;">
+        <h1>Al Mewjud Agency</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #fff; padding: 10px; text-align: center; margin-top: 20px;">
+        <p>&copy; 2026 Al Mewjud Agency. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
