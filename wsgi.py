@@ -1,9 +1,10 @@
 import os
 import sys
-from django.core.wsgi import get_wsgi_application
 
-# የፕሮጀክትህ ማህደር ወደ ሲስተሙ እንዲገባ እናደርገዋለን
-sys.path.insert(0, os.path.dirname(file))
+# የፕሮጀክትህን ዋና ፎልደር ወደ ሲስተም መንገድ ጨምር
+sys.path.append(os.getcwd())
+
+from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
