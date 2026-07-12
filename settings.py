@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 # 1. Base Directory (ይህ በመደበኛነት ያለውን ተጠቀም)
-BASE_DIR = Path(file).resolve().parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 2. Security (ይህ ለሙከራ ነው)
 SECRET_KEY = 'django-insecure-your-key-here' # ያንተን ኦሪጅናል ቁልፍ ተጠቀምበት
