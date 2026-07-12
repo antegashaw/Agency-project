@@ -2,13 +2,12 @@
   "builds": [
     {
       "src": "wsgi.py",
-      "use": "@vercel/python",
-      "config": 
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
+      "src": "/(.*)",
       "dest": "wsgi.py"
     }
   ]
