@@ -1,7 +1,6 @@
-import os
 from django.core.wsgi import get_wsgi_application
 
-# በ settings.py ውስጥ ያለው ስም በትክክል 'settings' መሆኑን አረጋግጥ
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MA_አዲስ_ኤጅንሲ.settings')
+# የፎልደሩ ስም ADDIS_AGENCY ስለሆነ settings የሚለው በውስጡ ነው ያለው
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ADDIS_AGENCY.settings')
 
 application = get_wsgi_application()
